@@ -22,6 +22,7 @@ namespace Residenthood.Admin.Controllers
         [Route("GetLeases")]
         public IEnumerable<Lease> Get()
         {
+            _logger.LogInformation("Getting leases");
             return Enumerable.Range(1, 5).Select(index => new Lease
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
